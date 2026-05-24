@@ -1,0 +1,38 @@
+{
+    // 使用 VS Code launch.json 格式
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C/C++ 一键调试(Debug)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\temp_debug.exe", // 这里改了
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "internalConsoleOptions": "neverOpen",
+            "preLaunchTask": "C/C++ 一键编译运行(Debug)",
+            "postDebugTask": "清理调试文件" // 新增
+        },
+        {
+            "name": "C/C++ 一键调试(Release)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\temp_release.exe", // 这里改了
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "internalConsoleOptions": "neverOpen",
+            "preLaunchTask": "C/C++ 一键编译运行(Release)",
+            "postDebugTask": "清理发布文件" // 新增
+        }
+    ]
+}

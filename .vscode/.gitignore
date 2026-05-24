@@ -1,0 +1,8 @@
+# 隐藏 VS Code 配置文件
+.vscode/
+*.exe
+*.o
+*.obj
+*.ilk
+*.pdb
+test.cpp

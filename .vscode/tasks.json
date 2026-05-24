@@ -1,0 +1,86 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++ 一键编译运行(Debug)",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "chcp 65001 >nul && gcc -g \"${file}\" -o \"${fileDirname}\\temp_debug.exe\""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "type": "shell",
+            "label": "C/C++ 一键编译运行(Release)",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "chcp 65001 >nul && gcc \"${file}\" -O2 -o \"${fileDirname}\\temp_release.exe\""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "type": "shell",
+            "label": "清理调试文件",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "del /f /q \"${fileDirname}\\temp_debug.exe\" 2>nul"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "清理发布文件",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "del /f /q \"${fileDirname}\\temp_release.exe\" 2>nul"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe 生成活动文件",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ]
+}

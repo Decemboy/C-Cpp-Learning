@@ -1,0 +1,36 @@
+{
+    // 编码设置，彻底解决中文乱码
+    "files.encoding": "utf8",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "path": "C:\\Windows\\System32\\cmd.exe",
+            "args": []
+        }
+    },
+    // C/C++格式化配置，代码风格统一
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_style": "Google",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    // 代码自动补全优化
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    // 括号自动补全和高亮
+    "editor.autoClosingBrackets": "always",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    // 自动保存
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "code-runner.executorMap": {
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.exe && start cmd /k $fileNameWithoutExt.exe",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.exe && start cmd /k $fileNameWithoutExt.exe"
+},
+"code-runner.runInTerminal": false
+}
